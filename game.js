@@ -1,30 +1,37 @@
 const avatarNode = document.querySelector('.avatar')
-const topEnd = "560px"
-const leftEnd = "420px"
 const divEnd = document.querySelector(".end")
-divEnd.style.marginTop = topEnd
-divEnd.style.marginLeft = leftEnd
+const imgKey = document.querySelector(".clef")
+divEnd.style.marginTop = "560px"
+divEnd.style.marginLeft = "420px"
+imgKey.style.marginTop = "260px"
+imgKey.style.marginLeft = "620px"
 const start = Date.now();
+let keyIsTrue = false
 document.addEventListener("keydown", (event) => {
     event.preventDefault();
-    
-    if (event.key === "ArrowDown" || event.keyCode === 83) //down
+    if (event.key === "ArrowDown" || event.key === "s") //down
     {
         
         avatarNode.style.marginTop = `${parseInt(avatarNode.style.marginTop || 0) + 10}px`;
-    } else if (event.key === "ArrowUp" || event.keyCode === 90) //up
+    } else if (event.key === "ArrowUp" || event.key === "z") //up
     {
         avatarNode.style.marginTop = `${parseInt(avatarNode.style.marginTop || 0) - 10}px`;
     }   
-    else if (event.key === "ArrowLeft" || event.keyCode === 81) //left
+    else if (event.key === "ArrowLeft" || event.key === "q") //left
     {
         avatarNode.style.marginLeft = `${parseInt(avatarNode.style.marginLeft || 0) - 10}px`;
     }
-    else if (event.key === "ArrowRight" || event.keyCode === 68) //right
+    else if (event.key === "ArrowRight" || event.key === "d") //right
     {
         avatarNode.style.marginLeft = `${parseInt(avatarNode.style.marginLeft || 0) + 10}px`;
     }
-    if(avatarNode.style.marginTop === topEnd && avatarNode.style.marginLeft === leftEnd){
+
+    if(avatarNode.style.marginTop === `${parseInt(imgKey.style.marginTop) - 10}px` && avatarNode.style.marginLeft === imgKey.style.marginLeft){
+        imgKey.style.display = "none" 
+        keyIsTrue = true
+    }
+
+    if(avatarNode.style.marginTop === `${parseInt(divEnd.style.marginTop) + 10}px` && avatarNode.style.marginLeft === divEnd.style.marginLeft && keyIsTrue === true){
         const millis = Date.now() - start;
         let secondes = Math.floor(millis / 1000)
         let minute = 0
