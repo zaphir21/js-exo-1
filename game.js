@@ -26,6 +26,10 @@ document.addEventListener("keydown", (event) => {
     }
     if(avatarNode.style.marginTop === topEnd && avatarNode.style.marginLeft === leftEnd){
         const millis = Date.now() - start;
-        window.alert(`Vous avez mis ${Math.floor(millis / 1000)}secondes`)
+        let secondes = Math.floor(millis / 1000)
+        let minute = 0
+        if(secondes > 60) minute = parseInt(secondes / 60)
+        secondes = secondes - (minute * 60)
+        window.alert(minute !== 0 ? `Vous avez mis ${minute}min et ${secondes}sec` : `Vous avez mis ${secondes}sec`)
     }
 });
