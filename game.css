@@ -1,0 +1,9 @@
+.avatar {
+    position: absolute;
+}
+.end{
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    background-color: beige;
+}
