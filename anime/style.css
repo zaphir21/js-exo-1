@@ -1,0 +1,22 @@
+.root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.anime{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    margin: 20px;
+    text-align: center;
+}
+
+.anime img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
